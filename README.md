@@ -3,7 +3,10 @@
 - Maven version: 3.*
 - Spring Boot version: 2.2.1.RELEASE
 
-## Commands
+## Build Commands
+
+From ./app
+
 - run:
 ```bash
 mvn clean package; java -jar target/school-registration-1.0-SNAPSHOT.jar
@@ -16,6 +19,9 @@ mvn clean install
 ```bash
 mvn clean test
 ```
+## Startup Commands
+
+From ./
 
 - start the application using Docker Compose:
 ```bash

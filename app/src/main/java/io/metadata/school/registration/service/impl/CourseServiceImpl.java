@@ -3,7 +3,6 @@ package io.metadata.school.registration.service.impl;
 import io.metadata.school.registration.entity.Course;
 import io.metadata.school.registration.repository.CourseRepository;
 import io.metadata.school.registration.service.CourseService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
