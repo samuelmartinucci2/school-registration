@@ -23,6 +23,11 @@ mvn clean test
 
 From ./
 
+- force image rebuild using Docker Compose:
+```bash
+docker-compose build
+```
+
 - start the application using Docker Compose:
 ```bash
 docker-compose up

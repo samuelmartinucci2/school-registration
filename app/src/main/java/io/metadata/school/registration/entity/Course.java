@@ -16,7 +16,7 @@ public class Course {
     @Column
     private String name;
 
-    @ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH})
     @JoinTable(name="enrollment",
             joinColumns={@JoinColumn(name="course_id")},
             inverseJoinColumns={@JoinColumn(name="student_id")})

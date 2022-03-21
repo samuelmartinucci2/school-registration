@@ -17,6 +17,14 @@ public class Student implements Serializable {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "students", cascade=CascadeType.ALL)
+    @ManyToMany(mappedBy = "students")
     private List<Course> courses = new ArrayList<>();
+
+    @PreRemove
+    private void unsubscribe() {
+        for (Course course : courses) {
+            course.getStudents().remove(this);
+        }
+    }
 }
+
