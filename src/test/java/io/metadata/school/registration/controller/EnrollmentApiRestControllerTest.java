@@ -17,6 +17,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -32,6 +33,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = Application.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 class EnrollmentApiRestControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -173,7 +175,7 @@ class EnrollmentApiRestControllerTest {
                         .contentType("application/json")
                         .content(requestJson))
                 .andDo(print())
-                .andExpect(jsonPath("$.*", hasSize(2)))
+                .andExpect(jsonPath("$.*", hasSize(3)))
                 .andExpect(jsonPath("$.id", greaterThan(0)))
                 .andExpect(jsonPath("$.name").value(course.getName()))
                 .andExpect(status().isCreated()).andReturn().getResponse();

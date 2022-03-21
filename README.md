@@ -17,6 +17,26 @@ mvn clean install
 mvn clean test
 ```
 
+- start the application using Docker Compose:
+```bash
+docker-compose up
+```
+
+- start the application using Docker Compose (background):
+```bash
+docker-compose up -d
+```
+
+- stop the application using Docker Compose:
+```bash
+docker-compose down
+```
+
+- stop the application and remove all created resources:
+```bash
+docker-compose down --rmi all
+```
+
 ## REST APIs:
 
 Sample requests shared via Postman: https://www.getpostman.com/collections/5c531954366bff6064ec
